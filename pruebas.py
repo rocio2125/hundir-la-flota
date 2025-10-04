@@ -1,7 +1,10 @@
-accion = input()
+import pygame
+pygame.mixer.init()
 
-x_str, y_str = accion.split(',')
-coordenada = (int(x_str),int(y_str))
-print(coordenada)
-print(type(coordenada[0]))
-print(type(coordenada[1]))
+sonido_agua = pygame.mixer.Sound('sonidos\splash.mp3')
+sonido_agua.play()
+pygame.time.delay(int(sonido_agua.get_length() * 1000))
+
+explosion = pygame.mixer.Sound('sonidos\explosion.mp3')
+explosion.play()
+pygame.time.delay(int(explosion.get_length() * 1000))

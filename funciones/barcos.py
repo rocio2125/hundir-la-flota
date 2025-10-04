@@ -1,6 +1,5 @@
 import random
 import numpy as np
-import tableros as t
 
 def coloca_barco_plus(tablero, barco):
     # Nos devuelve el tablero si puede colocar el barco, si no devuelve False, y avise por pantalla

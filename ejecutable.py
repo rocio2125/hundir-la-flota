@@ -1,6 +1,6 @@
-import tableros as tab
-import barcos 
-import disparos as disp
+from funciones import tableros as tab
+from funciones import barcos 
+from funciones import disparos as disp
 
 #Creamos los tableros
 tablero_A = tab.crea_tablero()
@@ -12,15 +12,18 @@ tablero_b = tab.crea_tablero()
 tablero_A = barcos.crear_y_colocar_los_barcos(tablero_A)
 tablero_a = barcos.crear_y_colocar_los_barcos(tablero_a)
 
+#Mensaje de bienvenida
+print("Hola navegante, vamos a jugar a hundir la flota.")
+
+#Empieza el turno de disparos
 while True:
     accion = input(
-        "Hola navegante, tienes tres opciones:" \
+        "Es tu turno.Tienes tres opciones:" \
         "\n\t1.- Para disparar introduce las coordenadas escribiendo 'fila,columna'" \
         "\n\t2.- Enseñame mi tablero. Escribe 'mi tablero'" \
         "\n\t3.- Enseñame el tablero del rival. Escribe 'tablero rival'" \
         "\n\t4.- Para salir escribe 'salir'" \
-        "\n"        
-    )
+        "\n")
     if accion == "salir":
         print("Gracias por jugar. ¡Hasta pronto!")
         exit()
@@ -42,16 +45,22 @@ while True:
     else:
         try:
             x_str, y_str = accion.split(',')
-            coordenada = (int(x_str),int(y_str))
+            coordenada = (int(y_str),int(x_str))
             
             disp.disparo(tablero_a,tablero_B,coordenada)
             print("Así queda el tablero del rival:\n",tablero_B)
+            
+            if tablero_a[coordenada] == "X":
+                print("Vuelve a ser tu turno")
+                continue
 
+            print("Es el turno del rival")
             disp.disparo_aleatorio(tablero_A,tablero_b)
             print("Así queda tu tablero:\n",tablero_A)
 
         except:
-            print("algo salió mal, vuelve a intentarlo")            
+            print("Algo salió mal, vuelve a intentarlo")   
+            continue         
 
 
 
