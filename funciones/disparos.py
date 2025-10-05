@@ -12,8 +12,6 @@ def disparo(tablero_1, tablero_2, coordenada):
         explosion.play()
         pygame.time.delay(int(explosion.get_length() * 1000))
         print("Tocado. ¡Le has dado de lleno!")
-    elif tablero_1[coordenada] == "X" or tablero_1[coordenada] == "~":
-        print("ya has disparado a esa posición, dispara a otro sitio")
     else:
         tablero_1[coordenada] = "~"
         tablero_2[coordenada] = "~"
@@ -31,7 +29,7 @@ def disparo_aleatorio(tablero_1,tablero_2):
             tablero_2[coordenada] = "X"
             explosion.play()
             pygame.time.delay(int(explosion.get_length() * 1000))
-            print("¡Oh no! Uno de tus barcos ha sido tocado.\n El rival volverá a disparar")
+            print("¡Oh no! Uno de tus barcos ha sido tocado.\nEl rival volverá a disparar")
             
         elif tablero_1[coordenada] == "X" or tablero_1[coordenada] == "~":
             continue
