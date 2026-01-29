@@ -1,4 +1,5 @@
 ⚓ Hundir la Flota (Battleship)
+
 📋 Descripción del Proyecto
 Este proyecto consiste en el desarrollo del clásico juego Hundir la Flota ejecutado en entorno de terminal. Se ha diseñado poniendo especial énfasis en la programación básica de python, la gestión de errores y mediante consola.
 
